@@ -1,6 +1,6 @@
 part of '../seam_connection.dart';
 
-class RegistrationRepository {
+class AuthenticationRepository {
   final _networkService = NetworkService();
 
   final _headers = {
@@ -107,30 +107,30 @@ class RegistrationRepository {
   }
 }
 
-class Generic {
-  /// If T is a List, K is the subtype of the list.
-  static T fromJson<T, K>(dynamic json) {
-    if (json is Iterable) {
-      return _fromJsonList<K>(json.toList()) as T;
-    } else if (T == RegisterModel) {
-      return RegisterModel.fromJson(json) as T;
-    } else if (T == LoginModel) {
-      return RegisterModel.fromJson(json) as T;
-    } else if (T == PasswordResetModel) {
-      return PasswordResetModel.fromJson(json) as T;
-    } else if (T == OTPVerificationModel) {
-      return OTPVerificationModel.fromJson(json) as T;
-    } else if (T == PhoneVerificationModel) {
-      return PhoneVerificationModel.fromJson(json) as T;
-    } else if (T == bool || T == String || T == int || T == double) {
-      // primitives
-      return json;
-    } else {
-      throw Exception("Unknown class");
-    }
-  }
-
-  static List<K>? _fromJsonList<K>(List<dynamic> jsonList) {
-    return jsonList.map<K>((dynamic json) => fromJson<K, void>(json)).toList();
-  }
-}
+// class Generic {
+//   /// If T is a List, K is the subtype of the list.
+//   static T fromJson<T, K>(dynamic json) {
+//     if (json is Iterable) {
+//       return _fromJsonList<K>(json.toList()) as T;
+//     } else if (T == RegisterModel) {
+//       return RegisterModel.fromJson(json) as T;
+//     } else if (T == LoginModel) {
+//       return RegisterModel.fromJson(json) as T;
+//     } else if (T == PasswordResetModel) {
+//       return PasswordResetModel.fromJson(json) as T;
+//     } else if (T == OTPVerificationModel) {
+//       return OTPVerificationModel.fromJson(json) as T;
+//     } else if (T == PhoneVerificationModel) {
+//       return PhoneVerificationModel.fromJson(json) as T;
+//     } else if (T == bool || T == String || T == int || T == double) {
+//       // primitives
+//       return json;
+//     } else {
+//       throw Exception("Unknown class");
+//     }
+//   }
+//
+//   static List<K>? _fromJsonList<K>(List<dynamic> jsonList) {
+//     return jsonList.map<K>((dynamic json) => fromJson<K, void>(json)).toList();
+//   }
+// }

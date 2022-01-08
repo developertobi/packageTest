@@ -14,16 +14,47 @@ and the Flutter guide for
 TODO: Put a short description of the package here that helps potential users
 know whether this package might be useful for them.
 
+Repositories for SEAM app.
+
 ## Features
 
 TODO: List what your package can do. Maybe include images, gifs, or videos.
 
 ## Getting started
 
+Add dependency
+Add this to your package's pubspec.yaml file, use the latest version Pub
+#  This is using the github version of the package
+seam_connection:
+  git:
+    url: (github link here e.g https://github.com/developertobi/packageTest.git)
+    ref: master
+
+You should then run flutter packages get
+
 TODO: List prerequisites and provide or point to information on how to
 start using the package.
 
 ## Usage
+
+Import the package:
+`import 'package:seam_connection/seam_connection.dart';`
+Then make calls to the repositories you want.
+Below are the available repositories and their corresponding methods for now:
+* AuthenticationRepository()
+  - register()
+  - login()
+  - resetPassword()
+  - otpVerification()
+  - phoneVerification()
+* CustomerRepository
+  - addCustomer()
+* MeasurementRepository
+  - addMeasurement()
+  - getMeasurement()
+  
+Example: To make a call to the register() method just call `await AuthenticationRepository().register(...);`
+
 
 TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder. 

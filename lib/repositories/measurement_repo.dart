@@ -9,7 +9,7 @@ class MeasurementRepository {
   };
 
   Future<AddMeasurementModel> addMeasurement({
-    int? customerId,
+    required int customerId,
     String? neck,
     String? back,
     String? halfBack,
