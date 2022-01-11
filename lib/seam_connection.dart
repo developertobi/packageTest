@@ -4,6 +4,7 @@ import 'dart:convert';
 
 import 'package:seam_connection/models/add_customer.dart';
 import 'package:seam_connection/models/add_measurement.dart';
+import 'package:seam_connection/models/get_customer.dart';
 import 'package:seam_connection/models/get_measurement.dart';
 import 'package:seam_connection/models/login.dart';
 import 'package:seam_connection/models/otp_verification.dart';

@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 
 class NetworkService {
-  static const API_BASE_URL = 'https://getseam.herokuapp.com/api/v1';
+  static const API_BASE_URL = 'https://getseam-v1.herokuapp.com/api/v1';
 
   void throwExceptionOnFail(http.Response response) {
     if (response.statusCode != 200 && response.statusCode != 201) {

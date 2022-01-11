@@ -31,17 +31,15 @@ class CustomerRepository {
     return AddCustomerModel.fromJson(response);
   }
 
-  // Future<GetMeasurementModel> getMeasurement({
-  //   required String customerId,
-  //   required String bearerToken,
-  // }) async {
-  //   var response = await _networkService.get(
-  //     'my/customers/$customerId/measurements',
-  //     headers: {'Authorization': 'Bearer $bearerToken', ..._headers},
-  //   );
-  //
-  //   print(response.toString());
-  //   return GetMeasurementModel.fromJson(response);
-  // }
+  Future<GetCustomerModel> getCustomer({
+    required String bearerToken,
+  }) async {
+    var response = await _networkService.get(
+      'my/customers',
+      headers: {'Authorization': 'Bearer $bearerToken', ..._headers},
+    );
 
+    print(response.toString());
+    return GetCustomerModel.fromJson(response);
+  }
 }
